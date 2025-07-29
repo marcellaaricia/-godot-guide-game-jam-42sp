@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Referências Godot - Game Jam 42</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #478cbf;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .emoji-banner {
+            font-size: 2em;
+            margin: 15px 0;
+        }
+
+        .intro-box {
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro-box h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro-box p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 25px 30px;
+        }
+
+        .resource-item {
+            background: #f8f9fa;
+            border-left: 5px solid #478cbf;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            background: #e3f2fd;
+            transform: translateX(10px);
+        }
+
+        .resource-title {
+            font-weight: bold;
+            color: #478cbf;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .resource-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .resource-link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        .resource-link:hover {
+            color: #45a049;
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pro-tip {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .pro-tip-title {
+            color: #856404;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section-content, .header {
+                padding: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .section, .header, .intro-box {
+                background: white;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Guia de Referências Godot</h1>
+            <p class="subtitle">Base de Estudos da Equipe Sguahdu - Tudo que vocês precisam para dominar o Godot!</p>
+            <div class="emoji-banner">🚀 🎯 ⭐</div>
+        </div>
+
+        <div class="intro-box">
+            <h2>🎊 Sobre o Godot</h2>
+            <p><strong>Godot</strong> (pronuncia "Go-DOH") é uma engine de jogos gratuita e open source para criar jogos 2D e 3D.</p>
+            <p>✅ <strong>Completamente gratuito</strong> - sem royalties ou taxas</p>
+            <p>✅ <strong>Código aberto</strong> - licença MIT super permissiva</p>
+            <p>✅ <strong>Multiplataforma</strong> - Windows, Mac, Linux, Android, iOS, Web</p>
+            <p>✅ <strong>Linguagem própria</strong> - GDScript (similar ao Python)</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">📚 Referências Oficiais</div>
+            <div class="section-content">
+                <div class="resource-item">
+                    <div class="resource-title">🌐 Site Oficial da Godot</div>
+                    <div class="resource-description">O ponto de partida oficial com downloads, documentação e novidades.</div>
+                    <a href="https://godotengine.org/" class="resource-link" target="_blank">https://godotengine.org/</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">📖 Documentação Oficial (Português)</div>
+                    <div class="resource-description">Tutorial passo a passo em português que ensina sobre nós, cenas e GDScript.</div>
+                    <a href="https://docs.godotengine.org/pt-br/4.x/getting_started/step_by_step/index.html" class="resource-link" target="_blank">Documentação PT-BR</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">📋 Documentação em Inglês (Completa)</div>
+                    <div class="resource-description">Documentação mais completa e sempre atualizada.</div>
+                    <a href="https://docs.godotengine.org/en/stable/" class="resource-link" target="_blank">Documentação EN</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🎬 Melhores Canais YouTube (Inglês)</div>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <strong>💡 Dica:</strong> Todos esses canais têm legendas automáticas que podem ser traduzidas para português nas configurações do YouTube!
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">⭐ Brackeys (IMPERDÍVEL!)</div>
+                    <div class="resource-description">O lendário criador de tutoriais Unity voltou em 2024 especificamente para ensinar Godot! Tem tutorial completo para iniciantes.</div>
+                    <a href="https://www.youtube.com/@Brackeys" class="resource-link" target="_blank">Canal do Brackeys</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🎯 GDQuest</div>
+                    <div class="resource-description">Conteúdo de alta qualidade focado em Godot, desde conceitos básicos até avançados.</div>
+                    <a href="https://www.gdquest.com/tutorial/godot/" class="resource-link" target="_blank">GDQuest Tutorials</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🎮 Heartbeast</div>
+                    <div class="resource-description">Curso completo gratuito de Action-RPG para Godot, com tutoriais passo a passo detalhados.</div>
+                    <a href="https://www.youtube.com/@uheartbeast" class="resource-link" target="_blank">Canal Heartbeast</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🏫 KidsCanCode</div>
+                    <div class="resource-description">Tutoriais simples e diretos, com formato texto e vídeo. Ótimo site "Godot Recipes".</div>
+                    <a href="https://www.youtube.com/@KidsCanCode" class="resource-link" target="_blank">Canal KidsCanCode</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🔧 Godot Tutorials</div>
+                    <div class="resource-description">Série completa sobre GDScript e fundamentos da engine, muito detalhada.</div>
+                    <a href="https://godottutorials.com/" class="resource-link" target="_blank">Godot Tutorials</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🇧🇷 Conteúdo em Português</div>
+            <div class="section-content">
+                <div class="resource-item">
+                    <div class="resource-title">🎬 Clécio Espindola GameDev</div>
+                    <div class="resource-description">Canal brasileiro com série de vídeos ensinando a criar jogos usando Godot, desde dicas básicas até projetos completos.</div>
+                    <a href="https://www.youtube.com/@ClecioEspindolaGameDev" class="resource-link" target="_blank">Canal do Clécio</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🎮 Gus Game Dev</div>
+                    <div class="resource-description">Canal brasileiro com tutoriais de jogos 2D em Godot, Unity e Construct.</div>
+                    <a href="https://www.youtube.com/@GusgameDev" class="resource-link" target="_blank">Canal Gus Game Dev</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">📚 Desenvolvendo Jogos com Godot (itch.io)</div>
+                    <div class="resource-description">Tutorial em português dividido em duas partes: básico e conceitos avançados.</div>
+                    <a href="https://calango-lavado-estudio.itch.io/" class="resource-link" target="_blank">Tutorial no itch.io</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🎓 Cursos Interativos e Gratuitos</div>
+            <div class="section-content">
+                <div class="resource-item">
+                    <div class="resource-title">💻 Learn GDScript From Zero (GDQuest)</div>
+                    <div class="resource-description">Tutorial interativo que roda no navegador! Ensina programação e GDScript do zero.</div>
+                    <a href="https://gdquest.github.io/learn-gdscript/" class="resource-link" target="_blank">Tutorial Interativo</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🎯 Zenva Academy - Godot 101</div>
+                    <div class="resource-description">Curso estruturado cobrindo fundamentos da engine, desde setup até cenas 2D e 3D.</div>
+                    <a href="https://academy.zenva.com/product/godot-101-game-engine-foundations/" class="resource-link" target="_blank">Zenva Godot 101</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">⚡ Dicas Rápidas para Game Jam</div>
+            <div class="section-content">
+                <div class="pro-tip">
+                    <div class="pro-tip-title">🚀 Para começar HOJE:</div>
+                    1. Baixem o Godot em godotengine.org<br>
+                    2. Assistam o tutorial do Brackeys "Your First Game in Godot"<br>
+                    3. Sigam o tutorial interativo "Learn GDScript From Zero"<br>
+                    4. Pratiquem criando um jogo simples (tipo Pong ou Snake)
+                </div>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-title">🎯 Conceitos-chave para entender:</div>
+                    • <strong>Nodes</strong>: Tudo no Godot é um node (sprite, som, animação, etc.)<br>
+                    • <strong>Scenes</strong>: Coleção de nodes organizados em árvore<br>
+                    • <strong>GDScript</strong>: Linguagem similar ao Python, fácil de aprender<br>
+                    • <strong>Signals</strong>: Sistema de comunicação entre nodes
+                </div>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-title">🏆 Estratégia para a Game Jam:</div>
+                    • Comecem com templates simples (2D platformer ou top-down)<br>
+                    • Foquem na jogabilidade primeiro, arte depois<br>
+                    • Usem assets gratuitos (OpenGameArt, itch.io)<br>
+                    • Testem em diferentes dispositivos se for para web/mobile
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">🔗 Links Úteis Extras</div>
+            <div class="section-content">
+                <div class="resource-item">
+                    <div class="resource-title">💬 Comunidade Godot (Discord/Forum)</div>
+                    <div class="resource-description">Para tirar dúvidas e pedir ajuda durante a jam.</div>
+                    <a href="https://forum.godotengine.org/" class="resource-link" target="_blank">Fórum Oficial</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">🎨 Assets Gratuitos</div>
+                    <div class="resource-description">Sprites, sons e músicas para usar nos jogos.</div>
+                    <a href="https://opengameart.org/" class="resource-link" target="_blank">OpenGameArt.org</a>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-title">📦 GitHub - Exemplos</div>
+                    <div class="resource-description">Projetos exemplo e assets do Brackeys.</div>
+                    <a href="https://github.com/brackeys" class="resource-link" target="_blank">GitHub Brackeys</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>🎉 Vamos com tudo na Game Jam time!</h3>
+            <p>Lembrem-se: o importante é se divertir e aprender. Godot é uma engine incrível e vocês vão amar trabalhar com ela! (Segundo meu amigo Claudio)</p>
+            <p><em>Documento criado pela Equipe Sguahdu - 29/julho/2025</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona funcionalidade de impressão
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
